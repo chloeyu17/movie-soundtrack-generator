@@ -13,8 +13,8 @@ var movieName = $('#movie-name')
 
 
 //Spotify Search API fetch function ....need to pass movie title through function parameter
-function spotifySearch() {
-    var url = "https://api.spotify.com/v1/search"
+function musicSearch() {
+    var url = ""
 
     fetch(url) 
 
@@ -32,4 +32,4 @@ function spotifySearch() {
     
 }
 
-spotifySearch();
+musicSearch();
