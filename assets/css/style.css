@@ -1,3 +1,11 @@
+:root {
+    --blue: #3054BF;
+    --lightblue: #2949A6;
+    --darkgreen:#238C79;
+    --green: #21BF65;
+    --lightgreen: #23D962; 
+}
+
 form h5 {
     margin-left: 20em;
 }
@@ -37,11 +45,4 @@ form h5 {
     background: white;
     border: 2px solid black;
     margin-right: 40px;
-
-:root {
-    --blue: #3054BF;
-    --lightblue: #2949A6;
-    --darkgreen:#238C79;
-    --green: #21BF65;
-    --lightgreen: #23D962; 
 }

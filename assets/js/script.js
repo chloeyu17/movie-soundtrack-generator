@@ -54,7 +54,6 @@ function omdbSearch(search) {
         })
     
 }
-omdbSearch();
 
 function generateTitle(search) {
     for(var i = 0; i<search.length; i++){
@@ -62,7 +61,16 @@ function generateTitle(search) {
             search[i] = "+";
         }
     }
-    console.log(search.join(''));
+    return search.join('');
 }
 
-generateTitle(Array.from("The Invisible Man"));
+// var searchTitle = generateTitle(Array.from("The Invisible Man"));
+// omdbSearch(searchTitle);
+
+// console.log(searchMovieInput)
+
+searchMovieBtn.on('click', function() {
+    var input = searchMovieInput.val().trim();
+    var searchTitle = generateTitle(Array.from(input));
+    omdbSearch(searchTitle);
+});
