@@ -1,0 +1,41 @@
+form h5 {
+    margin-left: 20em;
+}
+
+.form-group {
+    margin-left: 24em;
+}
+
+.mb-3 {
+    color: whitesmoke;
+}
+
+.alert {
+    width: 44%;
+    margin-left: 35em;
+    margin-top: 4em;
+}
+
+.alert-dark {
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+#wrapper {
+    white-space: nowrap;
+    margin-left: 28em;
+    margin-top: 4em;
+
+}
+#wrapper div {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    background: white;
+    border: 2px solid black;
+    margin-right: 40px;
+
+}
