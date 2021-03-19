@@ -13,8 +13,28 @@ var composerName = $('#composer')
 var movieName = $('#movie-name')
 
 // //Musixmatch Search API fetch function ....need to pass movie title through function parameter
-function musicSearch() {
-    var url = "https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/?apikey=" + API_KEY_MUSIXMATCH
+// function musicSearch() {
+//     var url = "https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/?apikey=" + API_KEY_MUSIXMATCH
+
+//     fetch(url) 
+
+//         .then(function (response){
+//             if (!response.ok) {
+//                 throw response.json();
+//             }
+//             return response.json();
+//         })
+
+//         .then(function (data){
+            
+//             console.log(data);
+//         })
+    
+// }
+
+//itunes api search
+function musicSearch(search) {
+    var url = "https://itunes.apple.com/search?term="+search+"&country=US"+"&limit=10"
 
     fetch(url) 
 
@@ -26,13 +46,11 @@ function musicSearch() {
         })
 
         .then(function (data){
-            
             console.log(data);
         })
-    
-}
+};
 
-musicSearch();
+// musicSearch();
 
 //OMDb Search API fetch function ....need to pass movie title through function parameter
 function omdbSearch(search) {
@@ -50,7 +68,6 @@ function omdbSearch(search) {
         .then(function (data){
             console.log(data);
         })
-    
 }
 
 function generateTitle(search) {
@@ -67,6 +84,8 @@ searchMovieBtn.on('click', function() {
     console.log(input);
     var searchTitle = generateTitle(Array.from(input));
     omdbSearch(searchTitle);
+    //adds "soundtrack" to end of every search for music search
+    musicSearch(searchTitle+ "+" + "soundtrack")
 });
 
 /*
