@@ -33,3 +33,24 @@ function spotifySearch() {
 }
 
 spotifySearch();
+
+//Spotify Search API fetch function ....need to pass movie title through function parameter
+function omdbSearch() {
+    var url = "http://www.omdbapi.com/?apikey=80c5dba2&s=The+Good+Place"
+
+    fetch(url) 
+
+        .then(function (response){
+            if (!response.ok) {
+                throw response.json();
+            }
+            return response.json();
+        })
+
+        .then(function (data){ 
+            console.log(data);
+        })
+    
+}
+
+omdbSearch();
