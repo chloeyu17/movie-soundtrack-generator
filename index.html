@@ -11,14 +11,18 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-
-
+    <!-- Jumbotron -->
+    <div class="p-5 text-center bg-dark">
+        <h1 class="mb-3">Song movie search jawn? Say no more fam.</h1>
+        <h4 class="mb-3 realtime"></h4>
+      </div>
     <!-- container to hold form -->
-    <div class="container-md" style="display: flex; justify-content: center; padding-top: 35vh;"></div>
+    <div class="container-md" style="padding-top: 35px;">
        <!-- search form -->
-        <form>
-            <div class="form-group input-group col-3 align-items-center">
-                <input type="text" class="form-control" id="search-movie" placeholder="Enter Movie here">
+        <form class="form-move">
+            <h5>Search for a movie:</h5>
+            <div class="form-group input-group col-5 align-items-center">
+                <input type="text" class="form-control" id="search-movie" placeholder="Enter Movie here! Ex: Wayne's World" onclick.window.location.href = "results.html"/>
                 <div class="input-group-append">
                     <button class="btn btn-primary" type="button" id="search-movie-btn">
                         <i class="fa fa-search"></i>
@@ -27,7 +31,36 @@
             </div>
         </form>
     </div>
-    
+
+<div class="container" id="recommend">    
+    <div class="alert alert-dark" role="alert">
+        Recommended Movies from the creators
+      </div>
+
+      <section id="wrapper">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+            <table></table>
+        </div>
+    </section>
+
+    <div class="alert alert-dark" role="alert">
+        Recommended Soundtracks from Search
+      </div>
+
+      <section id="wrapper">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+            <table></table>
+        </div>
+    </section>
+</div>
 
 </body>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -12,27 +12,27 @@ var songName = $('#song-name')
 var composerName = $('#composer')
 var movieName = $('#movie-name')
 
-//Spotify Search API fetch function ....need to pass movie title through function parameter
-function spotifySearch() {
-    var url = "https://api.spotify.com/v1/search"
+// //Spotify Search API fetch function ....need to pass movie title through function parameter
+// function musicSearch() {
+//     var url = ""
 
-    fetch(url) 
+//     fetch(url) 
 
-        .then(function (response){
-            if (!response.ok) {
-                throw response.json();
-            }
-            return response.json();
-        })
+//         .then(function (response){
+//             if (!response.ok) {
+//                 throw response.json();
+//             }
+//             return response.json();
+//         })
 
-        .then(function (data){
+//         .then(function (data){
             
-            console.log(data);
-        })
+//             console.log(data);
+//         })
     
-}
+// }
 
-spotifySearch();
+// musicSearch();
 
 //Spotify Search API fetch function ....need to pass movie title through function parameter
 function omdbSearch(search) {
@@ -68,3 +68,22 @@ searchMovieBtn.on('click', function() {
     var searchTitle = generateTitle(Array.from(input));
     omdbSearch(searchTitle);
 });
+
+/*
+var id 
+var contentCards
+var movieCards = $('#')
+
+$('#search-movie-btn').on("click", function(){\
+
+for (i = 0; i < data.length; i++) { 
+            var id = data[i];
+//making card elements 
+var contentCards = $("<img>")
+//Create each card
+movieCards.append(contentCards)
+//tags 
+contentCards.attr(data.(apiimagelocation)
+}
+});
+*/
