@@ -37,3 +37,22 @@ function musicSearch() {
 }
 
 musicSearch();
+
+/*
+var id 
+var contentCards
+var movieCards = $('#')
+
+$('#search-movie-btn').on("click", function(){\
+
+for (i = 0; i < data.length; i++) { 
+            var id = data[i];
+//making card elements 
+var contentCards = $("<img>")
+//Create each card
+movieCards.append(contentCards)
+//tags 
+contentCards.attr(data.(apiimagelocation)
+}
+});
+*/
