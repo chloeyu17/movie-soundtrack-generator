@@ -12,29 +12,29 @@ var songName = $('#song-name')
 var composerName = $('#composer')
 var movieName = $('#movie-name')
 
-// //Spotify Search API fetch function ....need to pass movie title through function parameter
-// function musicSearch() {
-//     var url = ""
+// //Musixmatch Search API fetch function ....need to pass movie title through function parameter
+function musicSearch() {
+    var url = "https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/?apikey=" + API_KEY_MUSIXMATCH
 
-//     fetch(url) 
+    fetch(url) 
 
-//         .then(function (response){
-//             if (!response.ok) {
-//                 throw response.json();
-//             }
-//             return response.json();
-//         })
+        .then(function (response){
+            if (!response.ok) {
+                throw response.json();
+            }
+            return response.json();
+        })
 
-//         .then(function (data){
+        .then(function (data){
             
-//             console.log(data);
-//         })
+            console.log(data);
+        })
     
-// }
+}
 
-// musicSearch();
+musicSearch();
 
-//Spotify Search API fetch function ....need to pass movie title through function parameter
+//OMDb Search API fetch function ....need to pass movie title through function parameter
 function omdbSearch(search) {
     var url = "http://www.omdbapi.com/?apikey="+API_KEY_OMDB+"&s="+search;
 
