@@ -68,7 +68,9 @@ function omdbSearch(search) {
         .then(function (data){
             console.log(data);
 
+            //empty card container on every search
             $('#movie-wrapper').empty();
+            //loop to create card from movie search results
             for (let i = 0; i < data.Search.length; i++) {
                 
 
