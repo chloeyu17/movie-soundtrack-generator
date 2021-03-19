@@ -110,7 +110,18 @@ function generateTitle(search) {
     return search.join('');
 }
 
+//submit on click of search button
 searchMovieBtn.on('click', function() {
+    var input = searchMovieInput.val().trim();
+    console.log(input);
+    var searchTitle = generateTitle(Array.from(input));
+    omdbSearch(searchTitle);
+    //adds "soundtrack" to end of every search for music search
+    musicSearch(searchTitle+ "+" + "soundtrack")
+});
+
+//submit on enter button hit
+$('#form-search').on('submit', function() {
     var input = searchMovieInput.val().trim();
     console.log(input);
     var searchTitle = generateTitle(Array.from(input));
