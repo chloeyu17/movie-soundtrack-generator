@@ -67,6 +67,35 @@ function omdbSearch(search) {
 
         .then(function (data){
             console.log(data);
+
+            $('#movie-wrapper').empty();
+            for (let i = 0; i < data.Search.length; i++) {
+                
+
+                // Movie card elements
+                var movieWrapper = $('#movie-wrapper')
+                var movieCol = $("<div class='col-12 col-md-6 col-sm mb-3'>");
+                var movieCard = $("<div class='card text-white'>");
+                var movieCardTitle = $("<h5 class='card-title'>")
+                var movieCardBody = $("<div class='card-body'>");
+
+                var movieImg = $("<img>");
+
+                // create each card
+                movieWrapper.append(movieCol);
+                movieCol.append(movieCard);
+                movieCard.append(movieCardTitle);
+                movieCard.append(movieCardBody);
+                movieCardBody.append(movieImg);
+
+                //add info to cards
+                movieCardTitle.text(data.Search[i].Title);
+                movieImg.attr('src', data.Search[i].Poster);
+
+                //If there are 5 cards stop loop
+                if (i === 4)
+                    break;
+            }
         })
 }
 
