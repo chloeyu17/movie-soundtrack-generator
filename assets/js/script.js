@@ -76,23 +76,23 @@ function omdbSearch(search) {
 
                 // Movie card elements
                 var movieWrapper = $('#movie-wrapper')
-                var movieCol = $("<div class='col-12 col-md-6 col-sm mb-3'>");
-                var movieCard = $("<div class='card text-white'>");
-                var movieCardTitle = $("<h5 class='card-title'>")
-                var movieCardBody = $("<div class='card-body'>");
+                var movieCol = $("<div class='col-12 col-md-4 col-sm mb-3'>");
+                var movieCard = $("<div class='card text-dark' style='width: 18rem; background-color:#238C79'>");
+                var movieCardTitle = $("<h5 class='card-title text-center'>")
+                var movieCardBody = $("<img class='card-img-bottom' style='width:100%'>");
 
-                var movieImg = $("<img>");
+                // var movieImg = $("<img>");
 
                 // create each card
                 movieWrapper.append(movieCol);
                 movieCol.append(movieCard);
                 movieCard.append(movieCardTitle);
                 movieCard.append(movieCardBody);
-                movieCardBody.append(movieImg);
+                // movieCardBody.append(movieImg);
 
                 //add info to cards
                 movieCardTitle.text(data.Search[i].Title);
-                movieImg.attr('src', data.Search[i].Poster);
+                movieCardBody.attr('src', data.Search[i].Poster);
 
                 //If there are 5 cards stop loop
                 if (i === 4)
