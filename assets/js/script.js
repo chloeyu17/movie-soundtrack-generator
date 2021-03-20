@@ -77,12 +77,14 @@ function omdbSearch(search) {
                 // Movie card elements
                 var movieWrapper = $('#movie-wrapper')
                 var movieCol = $("<div class='col-12 col-md-4 col-sm mb-3'>");
-                var movieCard = $("<div class='card text-dark' style='width: 18rem; background-color:#238C79'>");
+                var movieCard = $("<div id='movieCard' class='card text-dark' style='width: 18rem; background-color:#238C79'>");
                 var movieCardTitle = $("<h5 class='card-title text-center'>")
                 var movieCardBody = $("<img class='card-img-bottom' style='width:100%'>");
 
-                // var movieImg = $("<img>");
-
+                //Creates eventlistener to select album based on movie 
+                movieCard.on("click", function(){
+                musicSearch(data.Search[i].Title + "+" + "soundtrack");
+                });
                 // create each card
                 movieWrapper.append(movieCol);
                 movieCol.append(movieCard);
@@ -117,34 +119,20 @@ searchMovieBtn.on('click', function() {
     var searchTitle = generateTitle(Array.from(input));
     omdbSearch(searchTitle);
     //adds "soundtrack" to end of every search for music search
-    musicSearch(searchTitle+ "+" + "soundtrack")
+    // musicSearch(searchTitle+ "+" + "soundtrack")
 });
 
 //submit on enter button hit
-$('#form-search').on('submit', function() {
+$('#form-search').on('submit', function(event) {
+    event.preventDefault();
     var input = searchMovieInput.val().trim();
     console.log(input);
     var searchTitle = generateTitle(Array.from(input));
     omdbSearch(searchTitle);
     //adds "soundtrack" to end of every search for music search
-    musicSearch(searchTitle+ "+" + "soundtrack")
+    // musicSearch(searchTitle+ "+" + "soundtrack")
 });
 
-/*
-var id 
-var contentCards
-var movieCards = $('#')
 
-$('#search-movie-btn').on("click", function(){\
 
-for (i = 0; i < data.length; i++) { 
-            var id = data[i];
-//making card elements 
-var contentCards = $("<img>")
-//Create each card
-movieCards.append(contentCards)
-//tags 
-contentCards.attr(data.(apiimagelocation)
-}
-});
-*/
+
