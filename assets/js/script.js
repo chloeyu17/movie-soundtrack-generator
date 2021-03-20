@@ -3,10 +3,10 @@ var API_KEY_MUSIXMATCH = "b8a7a5f08ebc8726a80091d40c2a0c86"
 
 //Global scope of variables for easy access
 
-
 //search
 var searchMovieBtn = $('#search-movie-btn')
 var searchMovieInput = $('#search-movie')
+var movieSearchHistory = [];
 
 //Results area variables
 var songName = $('#song-name')
@@ -51,7 +51,7 @@ function musicSearch(search) {
 
             $('#movie-wrapper').empty();
 
-            var jumbatron = $('<')
+            // var jumbatron = $('<')
             // <div class="jumbotron">
             // <h1 class="display-4">Hello, world!</h1>
             // <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -144,7 +144,10 @@ searchMovieBtn.on('click', function() {
     omdbSearch(searchTitle);
     //adds "soundtrack" to end of every search for music search
     // musicSearch(searchTitle+ "+" + "soundtrack")
+
 });
+
+
 
 //submit on enter button hit
 $('#form-search').on('submit', function(event) {
@@ -155,7 +158,26 @@ $('#form-search').on('submit', function(event) {
     omdbSearch(searchTitle);
     //adds "soundtrack" to end of every search for music search
     // musicSearch(searchTitle+ "+" + "soundtrack")
+
+        window.localStorage.setItem("input",Array.from(input));
+        console.log(Array.from(input))
+        // Turn input into an array 
+        // Pull from array
+        // var userMovies = JSON.parse(localStorage.getItem("input"));
+        // console.log(userMovies);
+    
 });
+
+// function listArray() {
+//     movieSearchHistoryList.empty();
+//     movieSearchHistory.forEach(function (movieTitle){
+//         //var searchHistoryItem = $('<li type="button" class="list-group-item btn btn-warning btn-sm" id="city-btn">');
+//         //add ul for entries
+        
+//     });   
+//     //Loop for local storage for user search history
+
+// }
 
 
 
