@@ -47,6 +47,24 @@ function musicSearch(search) {
 
         .then(function (data){
             console.log(data);
+
+            $('#movie-wrapper').empty();
+
+            var jumbatron = $('<')
+            // <div class="jumbotron">
+            // <h1 class="display-4">Hello, world!</h1>
+            // <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            // <hr class="my-4">
+            // <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            // <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            // </div>
+            //add album title
+            //add album artist
+            //add album art
+
+            //for loop to loop over each track
+            //to create cards or something with info we want in them
+
         })
 };
 
@@ -74,31 +92,36 @@ function omdbSearch(search) {
             for (let i = 0; i < data.Search.length; i++) {
                 
 
-                // Movie card elements
-                var movieWrapper = $('#movie-wrapper')
-                var movieCol = $("<div class='col-12 col-md-4 col-sm mb-3'>");
-                var movieCard = $("<div id='movieCard' class='card text-dark' style='width: 18rem; background-color:#238C79'>");
-                var movieCardTitle = $("<h5 class='card-title text-center'>")
-                var movieCardBody = $("<img class='card-img-bottom' style='width:100%'>");
+                if(data.Search[i].Poster !==  "N/A"){
+                    // Movie card elements
+                    var movieWrapper = $('#movie-wrapper')
+                    var movieCol = $("<div class='col-12 col-md-4 col-sm mb-3'>");
+                    var movieCard = $("<div id='movieCard' class='card text-dark' style='width: 18rem; background-color:#238C79'>");
+                    var movieCardTitle = $("<h5 class='card-title text-center'>")
+                    var movieCardBody = $("<img class='card-img-bottom' style='width:100%'>");
 
-                //Creates eventlistener to select album based on movie 
-                movieCard.on("click", function(){
-                musicSearch(data.Search[i].Title + "+" + "soundtrack");
-                });
-                // create each card
-                movieWrapper.append(movieCol);
-                movieCol.append(movieCard);
-                movieCard.append(movieCardTitle);
-                movieCard.append(movieCardBody);
-                // movieCardBody.append(movieImg);
+                    //Creates eventlistener to select album based on movie 
+                    movieCard.on("click", function(){
+                    
 
-                //add info to cards
-                movieCardTitle.text(data.Search[i].Title);
-                movieCardBody.attr('src', data.Search[i].Poster);
+                    musicSearch(data.Search[i].Title + "+" + "soundtrack");
+                    });
 
-                //If there are 5 cards stop loop
-                if (i === 4)
-                    break;
+                    // create each card
+                    movieWrapper.append(movieCol);
+                    movieCol.append(movieCard);
+                    movieCard.append(movieCardTitle);
+                    movieCard.append(movieCardBody);
+                    // movieCardBody.append(movieImg);
+
+                    //add info to cards
+                    movieCardTitle.text(data.Search[i].Title);
+                    movieCardBody.attr('src', data.Search[i].Poster);
+
+                    //If there are 5 cards stop loop
+                    if (i === 19)
+                        break;
+                }        
             }
         })
 }
