@@ -34,21 +34,30 @@ form h5 {
 
 #wrapper {
     white-space: nowrap;
-    margin-left: 19em;
-    margin-top: 4em;
+    margin-left: 28em;
 
 }
 #wrapper div {
     display: inline-block;
-    height: 240px;
+    height: 349px;
     width: 240px;
     background: white;
     border: 2px solid black;
     margin-right: 40px;
+    margin-top: 20px;
 }
 
 .wrapper-btn {
     white-space: nowrap;
-    margin-left: 19em;
+    margin-left: 28em;
     margin-top: 4em;
+}
+
+section {
+    display: flex;
+}
+
+.gabe-movie {
+    width: 100%;
+    height: 100%;
 }
