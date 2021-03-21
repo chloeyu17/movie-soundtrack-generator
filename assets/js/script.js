@@ -35,7 +35,7 @@ var movieName = $('#movie-name')
 
 //itunes api search
 function musicSearch(search) {
-    var url = "https://itunes.apple.com/search?term="+search+"&country=US"+"&limit=20"
+    var url = "https://itunes.apple.com/search?term="+search+"&country=US"+"&limit=30"
 
     fetch(url) 
 
@@ -53,18 +53,54 @@ function musicSearch(search) {
             $('#movie-wrapper').empty();
             //shows music wrapper
             $('#music-wrapper').removeClass('hide');
-
+            //empties track list every new search
+            $('#tracks').empty();
+            
 
             for (let i = 0; i < data.results.length; i++) {
                 var musicResults = data.results.length[i];
                 console.log(musicResults);
                 
+                //var of id's
+                var artwork = $('#artwork') 
+                var composer = $('#composer') 
+                var tracks = $('#tracks')
+                var albumBtn = $('#albumBtn')
+                var artworkImg = artwork.children();
+
                 //var for making elements
+                
+                var listItem = $("<li class='list-group-item d-flex justify-content-between align-items-center'>");
+                var listItemTrack = $("<a target='_blank'>");
+                var listItemPreview = $("<a target='_blank'>");
+                var listItemPlayBtn = $("<i class='fas fa-play'>")
+                
+
+                //Add tags to Jumbotron
+                
+
+                //make music content not in loop
+                artworkImg.attr('src', data.results[0].artworkUrl100);
+                artwork.text(data.results[0].collectionName);
+                composer.text(data.results[0].collectionArtistName);
+                composer.attr('href', data.results[0].collectionArtistViewUrl)
+                albumBtn.attr('href', data.results[0].trackViewUrl)
+
                 
 
                 //if statement to make tracks list items 
                 if(data.results[i].collectionId === data.results[0].collectionId && data.results[i].trackNumber <= data.results[i].trackCount){
-                    
+
+                    //add tags to jumbotron
+                    tracks.append(listItem);
+                    listItem.append(listItemTrack);
+                    listItemTrack.append(listItemPreview);
+                    listItemTrack.append(listItemPlayBtn);
+
+                    //add track content
+                    listItemTrack.attr('href', data.results[i].trackViewUrl);
+                    listItemTrack.text(data.results[i].trackNumber + ".  " + data.results[i].trackName);
+                    listItemPreview.attr('href', data.results[i].previewUrl);
                 }
                 //else break loop
                 else {
