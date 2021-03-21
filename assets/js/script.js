@@ -35,7 +35,7 @@ var movieName = $('#movie-name')
 
 //itunes api search
 function musicSearch(search) {
-    var url = "https://itunes.apple.com/search?term="+search+"&country=US"+"&limit=10"
+    var url = "https://itunes.apple.com/search?term="+search+"&country=US"+"&limit=20"
 
     fetch(url) 
 
@@ -50,8 +50,13 @@ function musicSearch(search) {
             console.log(data);
 
             $('#movie-wrapper').empty();
+            $('#music-wrapper').removeClass('hide');
 
-            // var jumbatron = $('<')
+            for (let i = 0; i < array.length; i++) {
+                const element = array[i];
+                
+            }
+            // var jumbotron = $('<')
             // <div class="jumbotron">
             // <h1 class="display-4">Hello, world!</h1>
             // <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -89,6 +94,8 @@ function omdbSearch(search) {
 
             //empty card container on every search
             $('#movie-wrapper').empty();
+            //hides music jumbotron for every new search
+            $('#music-wrapper').addClass('hide');
             //loop to create card from movie search results
             for (let i = 0; i < data.Search.length; i++) {
                 
