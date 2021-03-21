@@ -49,12 +49,27 @@ function musicSearch(search) {
         .then(function (data){
             console.log(data);
 
+            //empties movie wrapper after clicked on a movie selection
             $('#movie-wrapper').empty();
+            //shows music wrapper
             $('#music-wrapper').removeClass('hide');
 
-            for (let i = 0; i < array.length; i++) {
-                const element = array[i];
+
+            for (let i = 0; i < data.results.length; i++) {
+                var musicResults = data.results.length[i];
+                console.log(musicResults);
                 
+                //var for making elements
+                
+
+                //if statement to make tracks list items 
+                if(data.results[i].collectionId === data.results[0].collectionId && data.results[i].trackNumber <= data.results[i].trackCount){
+                    
+                }
+                //else break loop
+                else {
+                    break;
+                }
             }
             // var jumbotron = $('<')
             // <div class="jumbotron">
