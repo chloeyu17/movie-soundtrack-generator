@@ -34,8 +34,8 @@ var movieName = $('#movie-name')
 // }
 
 //itunes api search
-function musicSearch(search) {
-    console.log(search);
+function musicSearch(year, search) {
+    console.log(year, search);
     var url = "https://itunes.apple.com/search?term="+search+"&country=US"
     
     fetch(url, {
@@ -59,11 +59,18 @@ function musicSearch(search) {
             //empties track list every new search
             $('#tracks').empty();
             
+            var searchTrim = search.split(" Soundtrack")
+            console.log(searchTrim);
+            
 
             for (let i = 0; i < data.results.length; i++) {
                 var musicResults = data.results[i].collectionId;
+                console.log(search);
+                console.log(data.results[i].collectionName.indexOf(searchTrim[0]));
+                var yearTrim = data.results[i].releaseDate.split("-")[0];
+                console.log(yearTrim, year);
 
-                if (data.results[i].collectionName.indexOf(search)) {
+                if ((data.results[i].collectionName.indexOf(searchTrim[0]) === 0) && (yearTrim == year)) {
                     console.log(musicResults);
                 
                     //var of id's
@@ -73,51 +80,33 @@ function musicSearch(search) {
                     var albumBtn = $('#albumBtn')
                     var albumImg = $('#album-image')
 
-                    //var for making elements
-                    
+                    //var for making tags/elements
                     var listItem = $("<li class='list-group-item d-flex justify-content-between align-items-center' id='list'>");
                     var listItemTrack = $("<a target='_blank' id='item-track' class='item-track'>");
                     var listItemPreview = $("<a target='_blank' id='item-prev' class='item-prev'>");
                     var listItemPlayBtn = $("<i class='fas fa-play'>")
                     
-
-                    //Add tags to Jumbotron
-                    
-
                     //make music content not in loop
-                    albumImg.attr('src', data.results[0].artworkUrl100);
-                    albumTitle.text(data.results[0].collectionName);
-                    composer.text(data.results[0].collectionArtistName);
-                    composer.attr('href', data.results[0].collectionArtistViewUrl)
-                    albumBtn.attr('href', data.results[0].trackViewUrl)
+                    albumImg.attr('src', data.results[i].artworkUrl100);
+                    albumTitle.text(data.results[i].collectionName);
+                    composer.text(data.results[i].collectionArtistName);
+                    composer.attr('href', data.results[i].collectionArtistViewUrl);
+                    albumBtn.attr('href', data.results[i].trackViewUrl);
+                        
+                    //add track content
+                    listItemTrack.attr('href', data.results[i].trackViewUrl);
+                    listItemTrack.text(data.results[i].trackName);
+                    listItemPreview.attr('href', data.results[i].previewUrl);
 
-                    
-
-                    //if statement to make tracks list items 
-                    if(data.results[i].collectionId === data.results[0].collectionId && data.results[i].trackNumber <= data.results[i].trackCount){
-
-                        //add tags to jumbotron
-                        tracks.append(listItem);
-                        listItem.append(listItemTrack);
-                        $('.list-group-item').append(listItemPreview);
-                        listItemPreview.append(listItemPlayBtn);
-
-                        //add track content
-                        listItemTrack.attr('href', data.results[i].trackViewUrl);
-                        listItemTrack.text(data.results[i].trackNumber + ".  " + data.results[i].trackName);
-                        listItemPreview.attr('href', data.results[i].previewUrl);
-                    }
-                    //else break loop
-                    else {
-                        break;
-                    }
+                    //add tags to jumbotron
+                    listItemPreview.append("  ",listItemPlayBtn);
+                    listItem.append(listItemTrack, listItemPreview);
+                    tracks.append(listItem);
                 }
             }
 
         })
 };
-
-// musicSearch();
 
 //OMDb Search API fetch function ....need to pass movie title through function parameter
 function omdbSearch(search) {
@@ -155,7 +144,7 @@ function omdbSearch(search) {
                     movieCard.on("click", function(){
                     
 
-                    musicSearch(data.Search[i].Title + " " + "Soundtrack");
+                    musicSearch(data.Search[i].Year, data.Search[i].Title + " " + "Soundtrack");
                     });
 
                     // create each card
@@ -192,9 +181,6 @@ searchMovieBtn.on('click', function() {
     console.log(input);
     var searchTitle = generateTitle(Array.from(input));
     omdbSearch(searchTitle);
-    //adds "soundtrack" to end of every search for music search
-    // musicSearch(searchTitle+ "+" + "soundtrack")
-
 });
 
 
@@ -206,8 +192,6 @@ $('#form-search').on('submit', function(event) {
     console.log(input);
     var searchTitle = generateTitle(Array.from(input));
     omdbSearch(searchTitle);
-    //adds "soundtrack" to end of every search for music search
-    // musicSearch(searchTitle+ "+" + "soundtrack")
 
         window.localStorage.setItem("input",Array.from(input));
         console.log(Array.from(input))
