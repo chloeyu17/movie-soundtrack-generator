@@ -86,7 +86,7 @@ function musicSearch(year, search) {
                     var listItemPreview = $("<a target='_blank' id='item-prev' class='item-prev'>");
                     var listItemPlayBtn = $("<i class='fas fa-play'>")
                     
-                    //make music content not in loop
+                    //make music content
                     albumImg.attr('src', data.results[i].artworkUrl100);
                     albumTitle.text(data.results[i].collectionName);
                     composer.text(data.results[i].collectionArtistName);
@@ -95,7 +95,7 @@ function musicSearch(year, search) {
                         
                     //add track content
                     listItemTrack.attr('href', data.results[i].trackViewUrl);
-                    listItemTrack.text(data.results[i].trackName);
+                    listItemTrack.text(data.results[i].trackName + "    (" + data.results[i].artistName + ")");
                     listItemPreview.attr('href', data.results[i].previewUrl);
 
                     //add tags to jumbotron
