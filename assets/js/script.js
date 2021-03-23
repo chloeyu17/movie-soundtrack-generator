@@ -192,6 +192,7 @@ $('#form-search').on('submit', function(event) {
     console.log(input);
     var searchTitle = generateTitle(Array.from(input));
     omdbSearch(searchTitle);
+    // window.location.href('results.html?search=')
 
         window.localStorage.setItem("input",Array.from(input));
         console.log(Array.from(input))
