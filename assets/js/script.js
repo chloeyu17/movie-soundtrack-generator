@@ -60,15 +60,15 @@ function musicSearch(year, search) {
             $('#tracks').empty();
             
             var searchTrim = search.split(" Soundtrack")
-            console.log(searchTrim);
+            //console.log(searchTrim);
             
 
             for (let i = 0; i < data.results.length; i++) {
                 var musicResults = data.results[i].collectionId;
-                console.log(search);
-                console.log(data.results[i].collectionName.indexOf(searchTrim[0]));
+                //console.log(search);
+                //console.log(data.results[i].collectionName.indexOf(searchTrim[0]));
                 var yearTrim = data.results[i].releaseDate.split("-")[0];
-                console.log(yearTrim, year);
+                //console.log(yearTrim, year);
 
                 if ((data.results[i].collectionName.indexOf(searchTrim[0]) === 0) && (yearTrim == year)) {
                     console.log(musicResults);
