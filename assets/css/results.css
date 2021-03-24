@@ -21,3 +21,7 @@ form h5 {
 .hide {
     display: none;
 }
+
+.show {
+    display: block;
+}
