@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Music Finder</title>
+    <title>Movie Soundtrack </title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-    <!-- Jumbotron -->
-    <div class="p-5 text-center bg-dark">
-        <h1 class="mb-3">Song movie search jawn? Say no more fam.</h1>
-        <h4 class="mb-3 realtime"></h4>
-      </div>
     <!-- container to hold form -->
     <div class="container-md" style="padding-top: 35px;">
-       <!-- search form -->
+        <!-- search form -->
         <form class="form-move" id="form-search">
             <h5>Search for a movie:</h5>
             <div class="form-group input-group col-5 align-items-center">
-                <input type="text" class="form-control" id="search-movie" placeholder="Enter Movie here! Ex: Wayne's World" onclick.window.location.href = "results.html"/>
+                <input type="text" class="form-control" id="search-movie"
+                    placeholder="Enter Movie here! Ex: Wayne's World"/>
                 <div class="input-group-append">
                     <button class="btn btn-primary" type="submit" id="search-movie-btn">
                         <i class="fa fa-search"></i>
@@ -32,235 +32,83 @@
         </form>
     </div>
 
-    <div class="alert alert-dark" role="alert">
-        Recommended Movies from the creators
-    </div>
-    
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Gabe's Favorite Movie
-</button>
+    <div class="container-fluid col-12 col-md-8 px-0">
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Wayne's World</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        My pick is Wayne's World. Simply put, it's light-heartly funny and timeless. Would recommend to anyone looking for something lowkey and lighter to watch, but in need of a good laugh.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      Cliff's pick!
-    </button>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel1">Modal random</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
+      <section id="home-wrapper" class="card-group">
+        
+        <div class="alert alert-dark" role="alert">
+            Recommended Movies from the creators
         </div>
-      </div>
-    </div>
-
-        <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      Launch demo modal
-    </button>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
+  
+        <section id="wrapper">
+            <div><a href="https://www.imdb.com/title/tt0105793/" target="_blank"><img class= "gabe-movie" src="https://m.media-amazon.com/images/M/MV5BMDAyNDY3MjUtYmJjYS00Zjc5LTlhM2MtNzgzYjNlOWVkZjkzL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg"></a></div>
+            <div><a href="https://www.imdb.com/title/tt0119215/" target="_blank"><img class= "gabe-movie" src="https://miro.medium.com/max/2000/1*Ivto9kwa0pxLTSEz_3HbLQ.jpeg"></a></div>
+            <div><a href="https://www.imdb.com/title/tt0991167/" target="_blank"><img class= "gabe-movie" src="https://m.media-amazon.com/images/M/MV5BMjE2MjIxNzM2M15BMl5BanBnXkFtZTcwMzkyNTU4MQ@@._V1_UY1200_CR74,0,630,1200_AL_.jpg"></a></div>
+            <div><a href="https://www.imdb.com/title/tt0070034/" target="_blank"><img class= "gabe-movie" src="https://cdn.shopify.com/s/files/1/1416/8662/products/enter_the_dragon_1973_r1979_original_film_art_f_1200x.jpg?v=1572896943"></a>
+              <table></table>
+            </div>
+        </section>
+  
+        <div class="alert alert-dark" role="alert">
+          Recommended Soundtracks from the creators
         </div>
-      </div>
+  
+        <section id="wrapper">
+            <div><a href="https://music.apple.com/us/album/how-i-live-now-original-motion-picture-soundtrack/715570599" target="_blank"><img class= "gabe-movie" src="https://i.pinimg.com/originals/d5/f5/df/d5f5df541755f09ccf2984338fdb1d1f.jpg"></a></div>
+            <div><a href="https://music.apple.com/us/album/o-brother-where-art-thou-music-from-the-motion-picture/1469575447" target="_blank"><img class= "gabe-movie" src="https://media.pitchfork.com/photos/5f973e571cc2de8c7d61a997/1:1/w_600/o%20brother%20where%20art%20thou%20ost.jpg"></a></div>
+            <div><a href="https://music.apple.com/us/album/shrek-original-motion-picture-soundtrack/1440517518" target="_blank"><img class= "gabe-movie" src="https://images-na.ssl-images-amazon.com/images/I/71YWMP%2B1MWL._SL1400_.jpg"></a></div>
+            <div><a href="https://music.apple.com/us/album/quentin-tarantinos-once-upon-time-in-hollywood-original/1473875745" target="_blank"><img class= "gabe-movie" src="https://m.media-amazon.com/images/M/MV5BOTg4ZTNkZmUtMzNlZi00YmFjLTk1MmUtNWQwNTM0YjcyNTNkXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_UY1200_CR90,0,630,1200_AL_.jpg"></a>
+              <table></table>
+            </div>
+        </section>
+      </section>
+
+        <section id="movie-wrapper" class="card-group">
+            <!-- movie cards made here -->
+            <!-- <div class='col-12 col-md-4 col-sm mb-3'> -->
+            <!-- <div id='movieCard' class='card text-dark' style='width: 18rem; background-color:#238C79'></div> -->
+            <!-- <h5 class='card-title text-center'></h5> -->
+            <!-- <img class='card-img-bottom' style='width:100%'> -->
+        </section>
+        <!-- Jumbotron for music soundtrack section -->
+        <section id="music-wrapper" class="card-group hide">
+            <div class="jumbotron" id="musicJumbotron">
+                <div class="row">
+                    <img alt="album artwork" class="album-image display-4 col-12 col-md-3" id="album-image">
+                    <h2 class="artwork col-12 col-md-9" id="album-title" class="album-title">
+                        <!-- Album title -->
+                    </h2>
+                </div>
+                <a class="lead composer" id="composer" target="_blank">
+                    <!-- Composer -->
+                </a>
+                <hr class="my-4">
+                <ul class="list-group tracks" id="tracks">
+                    <!-- list items/tracks created here -->
+                    <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="" target="_blank" id='item-track' class='item-track'>
+                        trackName
+                    </a>
+                    <a href="" target="_blank" id='item-prev' class='item-prev'>
+                        <i class="fas fa-play"></i>
+                    </a>
+                </li> -->
+                </ul>
+                <a class="btn btn-primary btn-lg" id="albumBtn" role="button">Listen to Soundtrack</a>
+            </div>
+        </section>
+        <section id="fail" class="hide">
+            Sorry, no results! 
+        </section>
     </div>
-
-    <section id="wrapper">
-        <div><img class= "gabe-movie" src="https://m.media-amazon.com/images/M/MV5BMDAyNDY3MjUtYmJjYS00Zjc5LTlhM2MtNzgzYjNlOWVkZjkzL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg"></div>
-        <div></div>
-        <div></div>
-        <div>
-            <table></table>
-        </div>
-    </section>
-
-    <div class="alert alert-dark" role="alert">
-        Recommended Soundtracks from the creators
-    </div>
-
-        <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Gabe's Favorite Soundtrack
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">How I Live Now</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        How I Live Now is not only a fantastic movie, but an incredibly soundtrack by Jon Hopkins. The ambiance and tone of the soundtrack is both calming and haunting, creating a real journey for the listener.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      Launch demo modal
-    </button>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-        <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      Launch demo modal
-    </button>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <section id="wrapper">
-        <div><img class= "gabe-movie" src="https://i5.walmartimages.com/asr/6ec9da4e-a885-4731-b85f-32113402c676_1.d33cd7e01ed9aaebacb3e901ca43d9c3.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff"></div>
-        <div></div>
-        <div></div>
-        <div>
-            <table></table>
-        </div>
-    </section>
 
 </body>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    <script src="assets/js/modal.js"></script>
-    <script src="./assets/js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+<script src="./assets/js/script.js"></script>
+
 </html>

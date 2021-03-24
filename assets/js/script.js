@@ -13,37 +13,18 @@ var songName = $('#song-name')
 var composerName = $('#composer')
 var movieName = $('#movie-name')
 
-// //Musixmatch Search API fetch function ....need to pass movie title through function parameter
-// function musicSearch() {
-//     var url = "https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/?apikey=" + API_KEY_MUSIXMATCH
-
-//     fetch(url) 
-
-//         .then(function (response){
-//             if (!response.ok) {
-//                 throw response.json();
-//             }
-//             return response.json();
-//         })
-
-//         .then(function (data){
-            
-//             console.log(data);
-//         })
-    
-// }
-
 //itunes api search
 function musicSearch(year, search) {
     console.log(year, search);
     var url = "https://itunes.apple.com/search?term="+search+"&country=US"
     
     fetch(url, {
-        // mode: 'no-cors'
+        cache: 'force-cache'
     }) 
 
         .then(function (response){
             if (!response.ok) {
+                console.log(response)
                 throw response.json();
             }
             return response.json();
@@ -60,19 +41,21 @@ function musicSearch(year, search) {
             $('#tracks').empty();
             
             var searchTrim = search.split(" Soundtrack")
-            console.log(searchTrim);
+            // console.log(searchTrim);
             
-
+            var weFoundAMatch = false
             for (let i = 0; i < data.results.length; i++) {
                 var musicResults = data.results[i].collectionId;
                 console.log(search);
                 console.log(data.results[i].collectionName.indexOf(searchTrim[0]));
                 var yearTrim = data.results[i].releaseDate.split("-")[0];
-                console.log(yearTrim, year);
-
-                if ((data.results[i].collectionName.indexOf(searchTrim[0]) === 0) && (yearTrim == year)) {
-                    console.log(musicResults);
-                
+                // console.log(yearTrim, year);
+                var lowerCaseSoundtrack = data.results[i].collectionName.toLowerCase()
+                if ((lowerCaseSoundtrack.indexOf(searchTrim[0]) === 0) && (yearTrim == year)) {
+                    // console.log(musicResults);
+                    // $('#music-wrapper').removeClass('hide');
+                    // $('#fail').addClass('hide')
+                    weFoundAMatch = true;
                     //var of id's
                     var albumTitle = $('#album-title') 
                     var composer = $('#composer') 
@@ -102,7 +85,15 @@ function musicSearch(year, search) {
                     listItemPreview.append("  ",listItemPlayBtn);
                     listItem.append(listItemTrack, listItemPreview);
                     tracks.append(listItem);
-                }
+                } 
+            }
+
+            if (weFoundAMatch) {
+                $('#music-wrapper').removeClass('hide');
+                $('#fail').addClass('hide')
+            } else {
+                $('#music-wrapper').addClass('hide');
+                $('#fail').removeClass('hide')
             }
 
         })
@@ -110,7 +101,7 @@ function musicSearch(year, search) {
 
 //OMDb Search API fetch function ....need to pass movie title through function parameter
 function omdbSearch(search) {
-    var url = "http://www.omdbapi.com/?apikey="+API_KEY_OMDB+"&s="+search;
+    var url = "https://www.omdbapi.com/?apikey="+API_KEY_OMDB+"&s="+search;
 
     fetch(url) 
 
@@ -128,6 +119,7 @@ function omdbSearch(search) {
             $('#movie-wrapper').empty();
             //hides music jumbotron for every new search
             $('#music-wrapper').addClass('hide');
+            $('#home-wrapper').addClass('hide');
             //loop to create card from movie search results
             for (let i = 0; i < data.Search.length; i++) {
                 
@@ -143,8 +135,8 @@ function omdbSearch(search) {
                     //Creates eventlistener to select album based on movie 
                     movieCard.on("click", function(){
                     
-
-                    musicSearch(data.Search[i].Year, data.Search[i].Title + " " + "Soundtrack");
+                    var lowercaseTitle = data.Search[i].Title.toLowerCase()
+                    musicSearch(data.Search[i].Year,  lowercaseTitle + " " + "Soundtrack");
                     });
 
                     // create each card
@@ -182,8 +174,6 @@ searchMovieBtn.on('click', function() {
     var searchTitle = generateTitle(Array.from(input));
     omdbSearch(searchTitle);
 });
-
-
 
 //submit on enter button hit
 $('#form-search').on('submit', function(event) {
