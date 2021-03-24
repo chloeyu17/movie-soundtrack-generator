@@ -13,36 +13,6 @@ var songName = $('#song-name')
 var composerName = $('#composer')
 var movieName = $('#movie-name')
 
-// //Musixmatch Search API fetch function ....need to pass movie title through function parameter
-// function musicSearch() {
-//     var url = "https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/?apikey=" + API_KEY_MUSIXMATCH
-
-//Spotify Search API fetch function ....need to pass movie title through function parameter
-// function musicSearch() {
-//     var url = ""
-
-//     fetch(url) 
-
-//         .then(function (response){
-//             if (!response.ok) {
-//                 throw response.json();
-//             }
-//             return response.json();
-//         })
-
-//         .then(function (data){
-            
-//             console.log(data);
-//         })
-    
-// }
-
-// musicSearch();
-
-//Spotify Search API fetch function ....need to pass movie title through function parameter
-function omdbSearch(search) {
-    var url = "https://www.omdbapi.com/?apikey="+API_KEY_OMDB+"&s="+search;
-
 //itunes api search
 function musicSearch(year, search) {
     console.log(year, search);
@@ -131,7 +101,7 @@ function musicSearch(year, search) {
 
 //OMDb Search API fetch function ....need to pass movie title through function parameter
 function omdbSearch(search) {
-    var url = "http://www.omdbapi.com/?apikey="+API_KEY_OMDB+"&s="+search;
+    var url = "https://www.omdbapi.com/?apikey="+API_KEY_OMDB+"&s="+search;
 
     fetch(url) 
 
@@ -203,8 +173,6 @@ searchMovieBtn.on('click', function() {
     var searchTitle = generateTitle(Array.from(input));
     omdbSearch(searchTitle);
 });
-
-
 
 //submit on enter button hit
 $('#form-search').on('submit', function(event) {
