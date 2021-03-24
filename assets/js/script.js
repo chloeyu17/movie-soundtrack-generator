@@ -39,11 +39,12 @@ function musicSearch(year, search) {
     var url = "https://itunes.apple.com/search?term="+search+"&country=US"
     
     fetch(url, {
-        // mode: 'no-cors'
+        cache: 'force-cache'
     }) 
 
         .then(function (response){
             if (!response.ok) {
+                console.log(response)
                 throw response.json();
             }
             return response.json();
@@ -60,19 +61,25 @@ function musicSearch(year, search) {
             $('#tracks').empty();
             
             var searchTrim = search.split(" Soundtrack")
-            //console.log(searchTrim);
-            
 
+            // console.log(searchTrim);
+
+            
+            var weFoundAMatch = false
             for (let i = 0; i < data.results.length; i++) {
                 var musicResults = data.results[i].collectionId;
                 //console.log(search);
                 //console.log(data.results[i].collectionName.indexOf(searchTrim[0]));
                 var yearTrim = data.results[i].releaseDate.split("-")[0];
-                //console.log(yearTrim, year);
 
-                if ((data.results[i].collectionName.indexOf(searchTrim[0]) === 0) && (yearTrim == year)) {
-                    console.log(musicResults);
-                
+                // console.log(yearTrim, year);
+                var lowerCaseSoundtrack = data.results[i].collectionName.toLowerCase()
+                if ((lowerCaseSoundtrack.indexOf(searchTrim[0]) === 0) && (yearTrim == year)) {
+                    // console.log(musicResults);
+                    // $('#music-wrapper').removeClass('hide');
+                    // $('#fail').addClass('hide')
+                    weFoundAMatch = true;
+
                     //var of id's
                     var albumTitle = $('#album-title') 
                     var composer = $('#composer') 
@@ -102,7 +109,15 @@ function musicSearch(year, search) {
                     listItemPreview.append("  ",listItemPlayBtn);
                     listItem.append(listItemTrack, listItemPreview);
                     tracks.append(listItem);
-                }
+                } 
+            }
+
+            if (weFoundAMatch) {
+                $('#music-wrapper').removeClass('hide');
+                $('#fail').addClass('hide')
+            } else {
+                $('#music-wrapper').addClass('hide');
+                $('#fail').removeClass('hide')
             }
 
         })
@@ -143,8 +158,8 @@ function omdbSearch(search) {
                     //Creates eventlistener to select album based on movie 
                     movieCard.on("click", function(){
                     
-
-                    musicSearch(data.Search[i].Year, data.Search[i].Title + " " + "Soundtrack");
+                    var lowercaseTitle = data.Search[i].Title.toLowerCase()
+                    musicSearch(data.Search[i].Year,  lowercaseTitle + " " + "Soundtrack");
                     });
 
                     // create each card
@@ -192,6 +207,7 @@ $('#form-search').on('submit', function(event) {
     console.log(input);
     var searchTitle = generateTitle(Array.from(input));
     omdbSearch(searchTitle);
+    // window.location.href('results.html?search=')
 
         window.localStorage.setItem("input",Array.from(input));
         console.log(Array.from(input))
