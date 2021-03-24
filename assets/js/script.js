@@ -41,7 +41,7 @@ var movieName = $('#movie-name')
 
 //Spotify Search API fetch function ....need to pass movie title through function parameter
 function omdbSearch(search) {
-    var url = "http://www.omdbapi.com/?apikey="+API_KEY_OMDB+"&s="+search;
+    var url = "https://www.omdbapi.com/?apikey="+API_KEY_OMDB+"&s="+search;
 
 //itunes api search
 function musicSearch(year, search) {
