@@ -119,6 +119,7 @@ function omdbSearch(search) {
             $('#movie-wrapper').empty();
             //hides music jumbotron for every new search
             $('#music-wrapper').addClass('hide');
+            $('#home-wrapper').addClass('hide');
             //loop to create card from movie search results
             for (let i = 0; i < data.Search.length; i++) {
                 
