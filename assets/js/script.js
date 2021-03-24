@@ -61,7 +61,9 @@ function musicSearch(year, search) {
             $('#tracks').empty();
             
             var searchTrim = search.split(" Soundtrack")
+
             // console.log(searchTrim);
+
             
             var weFoundAMatch = false
             for (let i = 0; i < data.results.length; i++) {
