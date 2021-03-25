@@ -10,6 +10,7 @@ var movieSearchHistory = [];
 var searchHistoryList = $('#search-history')
 var clearHistoryBtn = $('#clear-history-btn');
 var movieHistoryBtn = $('#movie-btn');
+var showHistoryBtn = $('#show-history-btn');
 
 //Results area variables
 var songName = $('#song-name')
@@ -181,13 +182,13 @@ searchMovieBtn.on('click', function() {
 //submit on enter button hit
 $('#form-search').on('submit', function(event) {
     event.preventDefault();
-    
+
     var input = searchMovieInput.val().trim();
     console.log(input);
     var searchTitle = generateTitle(Array.from(input));
     omdbSearch(searchTitle);
     searchMovieInput.val("");
-    searchHistory(searchTitle);
+    searchHistory(input);
 });
 
 function searchHistory(input) {
@@ -215,10 +216,10 @@ function listArray() {
         searchHistoryList.prepend(searchHistoryItem); 
 
         searchHistoryItem.on('click', function () {
-            var historyItem = searchHistoryItem.text()
+            var historyItem = generateTitle(Array.from(searchHistoryItem.text()));
             console.log(historyItem); 
             omdbSearch(historyItem);
-            searchHistory(historyItem);
+            searchHistory(searchHistoryItem.text());
         });
     }); 
 
@@ -244,6 +245,19 @@ clearHistoryBtn.on("click", function () {
     localStorage.clear();
     movieSearchHistory = [];
     listArray();
+});
+
+showHistoryBtn.on("click", function () {
+   if (searchHistoryList.data("toggle") === "hide") {
+       showHistoryBtn.text("Hide History");
+       searchHistoryList.data("toggle", "show");
+       searchHistoryList.removeClass("d-none");
+   }
+   else {
+    showHistoryBtn.text("Show History");
+    searchHistoryList.data("toggle", "hide");
+    searchHistoryList.addClass("d-none");
+   }
 });
 
 
