@@ -17,6 +17,7 @@ var songName = $('#song-name')
 var composerName = $('#composer')
 var movieName = $('#movie-name')
 
+
 //itunes api search
 function musicSearch(year, search) {
     console.log(year, search);
@@ -230,16 +231,12 @@ function listArray() {
 };
 
 function getHistory() {
-    if (localStorage.getItem("input")) {
-        movieList = JSON.parse(localStorage.getItem("input"));
-        var lastIndex = movieSearchHistory.length - 1;
-        
-        listArray();
 
-        if (movieList.length !== 0) {
-            currentWeather(movieList[lastIndex]);
-        }
-    }
+    movieList = JSON.parse(localStorage.getItem("input"));
+    console.log(movieList);
+    movieSearchHistory = movieList
+    listArray();
+    
 };
 
 clearHistoryBtn.on("click", function () {
@@ -248,7 +245,12 @@ clearHistoryBtn.on("click", function () {
     listArray();
 });
 
+//show and hide history toggle button
 showHistoryBtn.on("click", function () {
+
+    //check if search history exists when page loads
+   getHistory();
+
    if (searchHistoryList.data("toggle") === "hide") {
        showHistoryBtn.text("Hide History");
        searchHistoryList.data("toggle", "show");
@@ -260,5 +262,4 @@ showHistoryBtn.on("click", function () {
     searchHistoryList.addClass("d-none");
    }
 });
-
 
