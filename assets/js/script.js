@@ -7,6 +7,9 @@ var API_KEY_MUSIXMATCH = "b8a7a5f08ebc8726a80091d40c2a0c86"
 var searchMovieBtn = $('#search-movie-btn')
 var searchMovieInput = $('#search-movie')
 var movieSearchHistory = [];
+var searchHistoryList = $('#search-history')
+var clearHistoryBtn = $('#clear-history-btn');
+var movieHistoryBtn = $('#movie-btn');
 
 //Results area variables
 var songName = $('#song-name')
@@ -156,7 +159,7 @@ function omdbSearch(search) {
                 }        
             }
         })
-}
+};
 
 function generateTitle(search) {
     for(var i = 0; i<search.length; i++){
@@ -165,7 +168,7 @@ function generateTitle(search) {
         }
     }
     return search.join('');
-}
+};
 
 //submit on click of search button
 searchMovieBtn.on('click', function() {
@@ -178,32 +181,69 @@ searchMovieBtn.on('click', function() {
 //submit on enter button hit
 $('#form-search').on('submit', function(event) {
     event.preventDefault();
+    
     var input = searchMovieInput.val().trim();
     console.log(input);
     var searchTitle = generateTitle(Array.from(input));
     omdbSearch(searchTitle);
-    // window.location.href('results.html?search=')
-
-        window.localStorage.setItem("input",Array.from(input));
-        console.log(Array.from(input))
-        // Turn input into an array 
-        // Pull from array
-        // var userMovies = JSON.parse(localStorage.getItem("input"));
-        // console.log(userMovies);
-    
+    searchMovieInput.val("");
+    searchHistory(searchTitle);
 });
 
-// function listArray() {
-//     movieSearchHistoryList.empty();
-//     movieSearchHistory.forEach(function (movieTitle){
-//         //var searchHistoryItem = $('<li type="button" class="list-group-item btn btn-warning btn-sm" id="city-btn">');
-//         //add ul for entries
+function searchHistory(input) {
+    if(input){
+        if(movieSearchHistory.indexOf(input) === -1){
+            movieSearchHistory.push(input)
+            listArray();
+        }
+        else {
+            var removeIndex = movieSearchHistory.indexOf(input);
+            movieSearchHistory.splice(removeIndex,1);
+            movieSearchHistory.push(input); 
+            listArray();
+        }
+    }
+};
+
+function listArray() {
+    searchHistoryList.empty();
+
+    movieSearchHistory.forEach(function(input) {
+        var searchHistoryItem = $('<li type="button" class="list-group-item btn btn-warning btn-sm" id="movie-btn">');
+        searchHistoryItem.attr("data-value", input);
+        searchHistoryItem.text(input);
+        searchHistoryList.prepend(searchHistoryItem); 
+
+        searchHistoryItem.on('click', function () {
+            var historyItem = searchHistoryItem.text()
+            console.log(historyItem); 
+            omdbSearch(historyItem);
+            searchHistory(historyItem);
+        });
+    }); 
+
+    //sets input into local storage and places into and array 
+    window.localStorage.setItem("input", JSON.stringify(movieSearchHistory));
+    console.log("input", movieSearchHistory);
+};
+
+function getHistory() {
+    if (localStorage.getItem("input")) {
+        movieList = JSON.parse(localStorage.getItem("input"));
+        var lastIndex = movieSearchHistory.length - 1;
         
-//     });   
-//     //Loop for local storage for user search history
+        listArray();
 
-// }
+        if (movieList.length !== 0) {
+            currentWeather(movieList[lastIndex]);
+        }
+    }
+};
 
-
+clearHistoryBtn.on("click", function () {
+    localStorage.clear();
+    movieSearchHistory = [];
+    listArray();
+});
 
 
