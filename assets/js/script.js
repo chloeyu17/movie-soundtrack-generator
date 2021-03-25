@@ -133,7 +133,6 @@ function omdbSearch(search) {
                 if(data.Search[i].Poster !==  "N/A"){
                     // Movie card elements
                     var movieWrapper = $('#movie-wrapper')
-                    var movieCol = $("<div class='col-12 col-md-4 col-sm mb-3'>");
                     var movieCard = $("<div id='movieCard' class='card text-dark' style='width: 18rem; background-color:#238C79'>");
                     var movieCardTitle = $("<h5 class='card-title text-center'>")
                     var movieCardBody = $("<img class='card-img-bottom' style='width:100%'>");
