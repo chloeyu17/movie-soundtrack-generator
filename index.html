@@ -37,11 +37,14 @@
             </div>
         </form>
         <!-- Search History -->
-        <div class="card">
-            <ul class="list-group list-group-flush" id="search-history">
+        <div class="card" >
+            <ul class="list-group list-group-flush d-none" id="search-history" data-toggle="hide">
                 <!-- <li class="list-group-item"></li> -->
             </ul>
-            <button id="clear-history-btn" class="btn btn-sm btn-secondary">Clear History</button>
+            <div class="row space-between">
+                <button id="clear-history-btn" class="btn btn-sm btn-secondary col-6">Clear History</button>
+                <button id="show-history-btn" class="btn btn-sm btn-secondary col-6">Show History</button>
+            </div>
         </div>
     </div>
 
