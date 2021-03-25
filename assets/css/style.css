@@ -94,4 +94,24 @@ body > button:nth-child(20) {
     margin-left: 6.5em;
 }
 
-
+/* @media only screen and (max-width: 440px) {
+    body > div.container-md {
+        width: 214%
+    }
+    .alert {
+        width: 32%;
+        margin-left: 0px;
+        margin-top: 2em;
+        font-size: 17px;
+        line-height: 4;
+        text-align: center;
+    }
+    #wrapper {
+        margin-left: 23px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .container-md {
+        padding-left: 0px;
+    }
+} */
