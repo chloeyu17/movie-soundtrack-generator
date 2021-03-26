@@ -56,3 +56,21 @@ form h5 {
 .card-img, .card-img-top {
     height: 26em;
 }
+
+.movie-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 440px) {
+    form h5 {
+        margin-left: 2.3em;
+    }
+    .form-group {
+        margin-left: 2em;
+        width: 88%;
+    }
+    .col-5 {
+        max-width: 88%;
+    }
+}
