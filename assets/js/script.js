@@ -211,7 +211,7 @@ function listArray() {
     searchHistoryList.empty();
 
     movieSearchHistory.forEach(function(input) {
-        var searchHistoryItem = $('<li type="button" class="list-group-item btn btn-warning btn-sm" id="movie-btn">');
+        var searchHistoryItem = $('<li type="button" class="list-group-item btn btn-warning btn-sm history-item" id="movie-btn">');
         searchHistoryItem.attr("data-value", input);
         searchHistoryItem.text(input);
         searchHistoryList.prepend(searchHistoryItem); 
