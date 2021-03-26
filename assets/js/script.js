@@ -133,7 +133,7 @@ function omdbSearch(search) {
                     // Movie card elements
                     var movieWrapper = $('#movie-wrapper')
                     var movieCol = $("<div class='col-12 col-md-4 col-sm mb-3'>");
-                    var movieCard = $("<div id='movieCard' class='card text-dark' style='width: 18rem; background-color:#60daff'>");
+                    var movieCard = $("<div id='movieCard' class='card text-dark search-movie-card' style='width: 18rem; background-color:#60daff'>");
                     var movieCardTitle = $("<h5 class='card-title text-center'> ")
                     var movieCardBody = $("<img class='card-img-bottom' style='width:100%; height: 440px; object-fit: cover; border: black solid 2px'>");
 

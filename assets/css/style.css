@@ -91,6 +91,13 @@
     flex-wrap: wrap;
 }
 
+/* Makes cards have a outline and a cursor pointer when hover on with mouse */
+.m-card:hover, 
+.search-movie-card:hover {
+    box-shadow: inset 0px 0px 500px var(--blue), 0 0 25px var(--blue);
+    cursor: pointer;
+}
+
 .m-card {
     margin-bottom: 5px;
 }
