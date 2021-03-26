@@ -1,6 +1,10 @@
+*{
+    font-family: 'Noto Sans', sans-serif;
+}
+
 :root {
     --blue: #3054BF;
-    --lightblue: #2949A6;
+    --lightblue: #60daff;
     --darkgreen:#238C79;
     --green: #21BF65;
     --lightgreen: #23D962; 
@@ -52,6 +56,10 @@
     padding:0px;
 }
 
+.card-img-top{
+    border-bottom: black 2px solid;
+}
+
 .card {
     margin-left: 10px;
     border: 2px solid black;
@@ -65,13 +73,15 @@
 .alert-dark {
     margin-top: 20px;
     text-align: center;
+    border: var(--blue) 2px solid;
+    background-color: var(--lightblue);
 }
 
 .card-img, .card-img-top {
     height: 26em;
 }
 
-.list-group-item {
+.history-item {
     margin: 5px auto 5px auto;
     width: 39%;
 }
@@ -79,4 +89,55 @@
 .movie-cards {
     display: flex;
     flex-wrap: wrap;
+}
+
+.m-card {
+    margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 1312px){
+    .movie-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 10px;
+    }
+}
+
+@media only screen and (max-width: 980px){
+    .movie-cards {
+        display: block;
+        margin: 0 21%;
+    }
+
+    .card-wrap {
+        display: block;
+        margin: 0 auto 0 auto;
+    }
+
+    .m-card{
+        margin: 0 auto 5px auto;
+    }
+    .title{
+        font-size: 64px;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .col-5 {
+        max-width: 90%;
+    }
+
+    .movie-cards {
+        width: 82%;
+        margin: 0 10%;
+    }
+
+    .display-2 {
+        font-size: 3.5rem;
+    }
+
+    .history-item {
+        width: 85%;
+    }
 }
