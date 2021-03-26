@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- saved from url=(0098)file:///Users/gabethomas/Documents/Rutgers%20Bootcamp/movie-soundtrack-generator/index%20copy.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Soundtrack </title>
+
+    <link rel="stylesheet" href="./Movie Soundtrack_files/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Movie Soundtrack_files/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Movie Soundtrack_files/style.css">
+</head>
+
+<body>
+
+   <!-- Jumbotron -->
+    <div class="p-5 text-center bg-dark">
+        <h1 class="mb-3">Song movie search jawn? Say no more fam.</h1>
+        <h4 class="mb-3 realtime"></h4>
+    </div>
+
+    <!-- container to hold form -->
+    <div class="container-md" style="padding-top: 35px;">
+
+        <!-- search form -->
+        <form class="form-move" id="form-search">
+            <h5>Search for a movie:</h5>
+            <div class="form-group input-group col-5 align-items-center">
+                <input type="text" class="form-control" id="search-movie" placeholder="Enter Movie here! Ex: Wayne&#39;s World">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit" id="search-movie-btn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Search History -->
+
+        <div class="card">
+            <ul class="list-group list-group-flush" id="search-history" data-toggle="hide"><li type="button" class="list-group-item btn btn-warning btn-sm" id="movie-btn" data-value="Lion King">Lion King</li></ul>
+            <div class="row space-between">
+                <button id="clear-history-btn" class="btn btn-sm btn-secondary col-6">Clear History</button>
+                <button id="show-history-btn" class="btn btn-sm btn-secondary col-6">Hide History</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-fluid col-12 col-md-8 px-0">
+
+      <section id="home-wrapper" class="hide">
+
+        <div class="alert alert-dark" role="alert">
+            Recommended Movies from the creators
+        </div>
+
+        <div class="card-wrap">
+
+            <div class="card" style="width: 18rem;">
+                <div><a href="https://www.imdb.com/title/tt0105793/" target="_blank">
+                    <img src="./Movie Soundtrack_files/MV5BMDAyNDY3MjUtYmJjYS00Zjc5LTlhM2MtNzgzYjNlOWVkZjkzL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg" class="card-img-top" alt="Gabe&#39;s Movie Pick"></a></div>
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <div><a href="https://www.imdb.com/title/tt0119215/" target="_blank">
+                    <img src="./Movie Soundtrack_files/1_Ivto9kwa0pxLTSEz_3HbLQ.jpeg" class="card-img-top" alt="Cliff&#39;s Movie Pick"></a></div>
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <div><a href="https://www.imdb.com/title/tt0991167/" target="_blank">
+                    <img src="./Movie Soundtrack_files/MV5BMjE2MjIxNzM2M15BMl5BanBnXkFtZTcwMzkyNTU4MQ@@._V1_UY1200_CR74,0,630,1200_AL_.jpg" class="card-img-top" alt="Chloe&#39;s Movie Pick"></a></div>
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <div><a href="https://www.imdb.com/title/tt0070034/" target="_blank">
+                    <img src="./Movie Soundtrack_files/enter_the_dragon_1973_r1979_original_film_art_f_1200x.jpg" class="card-img-top" alt="Steven&#39;s Movie Pick"></a></div>
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="alert alert-dark" role="alert">
+         Recommended Soundtracks from the creators
+        </div>
+
+        <div class="card-wrap">
+
+            <div class="card" style="width: 18rem;">
+                <div><a href="https://music.apple.com/us/album/how-i-live-now-original-motion-picture-soundtrack/715570599" target="_blank">
+                    <img src="./Movie Soundtrack_files/d5f5df541755f09ccf2984338fdb1d1f.jpg" class="card-img-top" alt="Gabe&#39;s Soundtrack Pick"></a></div>
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <div><a href="https://music.apple.com/us/album/o-brother-where-art-thou-music-from-the-motion-picture/1469575447" target="_blank">
+                    <img src="./Movie Soundtrack_files/o brother where art thou ost.jpg" class="card-img-top" alt="Gabe&#39;s Soundtrack Pick"></a></div>
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <div><a href="https://music.apple.com/us/album/shrek-original-motion-picture-soundtrack/1440517518" target="_blank">
+                    <img src="./Movie Soundtrack_files/71YWMP+1MWL._SL1400_.jpg" class="card-img-top" alt="Gabe&#39;s Soundtrack Pick"></a></div>
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <div><a href="https://music.apple.com/us/album/quentin-tarantinos-once-upon-time-in-hollywood-original/1473875745" target="_blank">
+                    <img src="./Movie Soundtrack_files/MV5BOTg4ZTNkZmUtMzNlZi00YmFjLTk1MmUtNWQwNTM0YjcyNTNkXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_UY1200_CR90,0,630,1200_AL_.jpg" class="card-img-top" alt="Gabe&#39;s Soundtrack Pick"></a></div>
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+        <section id="" class="card-group"></section>
+
+        <!-- Jumbotron for music soundtrack section -->
+        <section id="music-wrapper" class="card-group">
+            <div class="jumbotron" id="musicJumbotron">
+                <div class="row">
+                    <img alt="album artwork" class="album-image display-4 col-12 col-md-3" id="album-image" src="./Movie Soundtrack_files/100x100bb.jpg">
+                    <h2 class="artwork col-12 col-md-9" id="album-title">The Lion King 2: Simba's Pride</h2>
+                </div>
+                <a class="lead composer" id="composer" target="_blank">Various Artists</a>
+                <hr class="my-4">
+                <ul class="list-group tracks" id="tracks"><li class="list-group-item d-flex justify-content-between align-items-center" id="list"><a target="_blank" id="item-track" class="item-track" href="https://music.apple.com/us/album/one-us-from-lion-king-ii-simbas-pride-soundtrack-version/1552078472?i=1552078642&amp;uo=4">One of Us    (The Chorus of the Lion King 2: Simba's Pride)</a><a target="_blank" id="item-prev" class="item-prev" href="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/a8/0a/c0/a80ac081-9de5-922c-5bd2-eb05d7465473/mzaf_15126422656384489851.plus.aac.p.m4a">  <i class="fas fa-play"></i></a></li><li class="list-group-item d-flex justify-content-between align-items-center" id="list"><a target="_blank" id="item-track" class="item-track" href="https://music.apple.com/us/album/upendi-from-lion-king-ii-simbas-pride-soundtrack-version/1552078472?i=1552078638&amp;uo=4">Upendi    (Liz Callaway, Gene Miller, Robert Guillaume &amp; Ladysmith Black Mambazo)</a><a target="_blank" id="item-prev" class="item-prev" href="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/d8/40/d4/d840d494-a5d0-56cd-4ec7-f613ecbd21f7/mzaf_8535173687655306916.plus.aac.p.m4a">  <i class="fas fa-play"></i></a></li><li class="list-group-item d-flex justify-content-between align-items-center" id="list"><a target="_blank" id="item-track" class="item-track" href="https://music.apple.com/us/album/love-will-find-way-end-title-from-lion-king-ii-simbas/1552078472?i=1552078993&amp;uo=4">Love Will Find A Way (End Title)    (Heather Headley &amp; Kenny Lattimore)</a><a target="_blank" id="item-prev" class="item-prev" href="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/5b/ff/50/5bff507b-1e59-64f9-9b1c-c0cba12f5a73/mzaf_391729653854631339.plus.aac.p.m4a">  <i class="fas fa-play"></i></a></li></ul>
+                <a class="btn btn-primary btn-lg" id="albumBtn" role="button" target="_blank" href="https://music.apple.com/us/album/love-will-find-way-end-title-from-lion-king-ii-simbas/1552078472?i=1552078993&amp;uo=4">Listen to Soundtrack</a>
+            </div>
+        </section>
+
+        <section id="fail" class="hide">
+            Sorry, no results! 
+        </section>
+    </div>
+
+
+<script src="./Movie Soundtrack_files/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="./Movie Soundtrack_files/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script src="./Movie Soundtrack_files/script.js"></script>
+
+
+</body></html>
