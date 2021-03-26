@@ -46,15 +46,13 @@ function musicSearch(year, search) {
             $('#tracks').empty();
             
             var searchTrim = search.split(" Soundtrack")
-
             // console.log(searchTrim);
-
             
             var weFoundAMatch = false
             for (let i = 0; i < data.results.length; i++) {
                 var musicResults = data.results[i].collectionId;
-                //console.log(search);
-                //console.log(data.results[i].collectionName.indexOf(searchTrim[0]));
+                console.log(search);
+                console.log(data.results[i].collectionName.indexOf(searchTrim[0]));
                 var yearTrim = data.results[i].releaseDate.split("-")[0];
                 // console.log(yearTrim, year);
                 var lowerCaseSoundtrack = data.results[i].collectionName.toLowerCase()
@@ -134,6 +132,7 @@ function omdbSearch(search) {
                 if(data.Search[i].Poster !==  "N/A"){
                     // Movie card elements
                     var movieWrapper = $('#movie-wrapper')
+                    var movieCol = $("<div class='col-12 col-md-4 col-sm mb-3'>");
                     var movieCard = $("<div id='movieCard' class='card text-dark' style='width: 18rem; background-color:#238C79'>");
                     var movieCardTitle = $("<h5 class='card-title text-center'>")
                     var movieCardBody = $("<img class='card-img-bottom' style='width:100%'>");
@@ -262,4 +261,3 @@ showHistoryBtn.on("click", function () {
     searchHistoryList.addClass("d-none");
    }
 });
-
