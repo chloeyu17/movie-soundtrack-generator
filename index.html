@@ -24,13 +24,11 @@
   </div>
 
     <!-- container to hold form -->
-
-    <div class="container-md" style="padding-top: 35px;">
-
+    <div class="container-md d-flex flex-column justify-content-center" style="padding-top: 35px;">
         <!-- search form -->
-        <form class="form-move col-5" id="form-search">
+        <form class="form-move" id="form-search">
             <h5 class="text-center">Search for a movie:</h5>
-            <div class="form-group input-group">
+            <div class="form-group input-group col-5">
                 <input type="text" class="form-control" id="search-movie"
                     placeholder="Enter Movie here! Ex: Wayne's World"/>
                 <div class="input-group-append">
@@ -42,11 +40,11 @@
         </form>
 
         <!-- Search History -->
-        <div class="d-flex flex-column justify-content-center my-3" >
-            <ul class="list-group list-group-flush d-none col" id="search-history" data-toggle="hide">
+        <div class="d-flex flex-column justify-content-center" >
+            <ul class="list-group list-group-flush d-none" id="search-history" data-toggle="hide">
                 <!-- <li class="list-group-item"></li> -->
             </ul>
-            <div class="d-flex flex justify-content-center row space-between">
+            <div class="d-flex flex justify-content-center row my-3">
                 <button id="clear-history-btn" class="btn btn-sm btn-secondary mx-1">Clear History</button>
                 <button id="show-history-btn" class="btn btn-sm btn-secondary mx-1">Show History</button>
             </div>
@@ -141,7 +139,7 @@
   
       </section>
   
-          <section id="movie-wrapper">
+          <section id="movie-wrapper" class="movie-cards">
               <!-- movie cards made here -->
               <!-- <div class='col-12 col-md-4 col-sm mb-3'> -->
               <!-- <div id='movieCard' class='card text-dark' style='width: 18rem; background-color:#238C79'></div> -->
