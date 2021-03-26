@@ -135,7 +135,7 @@ function omdbSearch(search) {
                     var movieCol = $("<div class='col-12 col-md-4 col-sm mb-3'>");
                     var movieCard = $("<div id='movieCard' class='card text-dark' style='width: 18rem; background-color:#60daff'>");
                     var movieCardTitle = $("<h5 class='card-title text-center'> ")
-                    var movieCardBody = $("<img class='card-img-bottom' style='width:100%'>");
+                    var movieCardBody = $("<img class='card-img-bottom' style='width:100%; height: 440px; object-fit: cover; border: black solid 2px'>");
 
                     //Creates eventlistener to select album based on movie 
                     movieCard.on("click", function(){
@@ -211,7 +211,7 @@ function listArray() {
     searchHistoryList.empty();
 
     movieSearchHistory.forEach(function(input) {
-        var searchHistoryItem = $('<li type="button" class="list-group-item btn btn-warning btn-sm history-item" id="movie-btn">');
+        var searchHistoryItem = $('<li type="button" class="list-group-item btn btn-outline-danger btn-sm history-item" id="movie-btn">');
         searchHistoryItem.attr("data-value", input);
         searchHistoryItem.text(input);
         searchHistoryList.prepend(searchHistoryItem); 

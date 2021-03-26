@@ -1,3 +1,7 @@
+*{
+    font-family: 'Noto Sans', sans-serif;
+}
+
 :root {
     --blue: #3054BF;
     --lightblue: #60daff;
@@ -18,8 +22,6 @@
   height: 340px;
   margin:15px 30px 0px 30px;
   }
-
-
 
 .form-group {
     margin: 0 auto 0 auto;
@@ -49,6 +51,10 @@
     padding:0px;
 }
 
+.card-img-top{
+    border-bottom: black 2px solid;
+}
+
 .card {
     margin-left: 10px;
     border: 2px solid black;
@@ -63,6 +69,8 @@
 .alert-dark {
     margin-top: 20px;
     text-align: center;
+    border: var(--blue) 2px solid;
+    background-color: var(--lightblue);
 }
 
 .card-img, .card-img-top {
@@ -105,6 +113,9 @@
 
     .m-card{
         margin: 0 auto 5px auto;
+    }
+    .title{
+        font-size: 64px;
     }
 }
 
