@@ -22,11 +22,11 @@
       </div>
 
     <!-- container to hold form -->
-    <div class="container-md" style="padding-top: 35px;">
+    <div class="container-md d-flex flex-column justify-content-center align-items-center" style="padding-top: 35px;">
         <!-- search form -->
-        <form class="form-move" id="form-search">
-            <h5>Search for a movie:</h5>
-            <div class="form-group input-group col-5 align-items-center">
+        <form class="form-move col-5" id="form-search">
+            <h5 class="text-center">Search for a movie:</h5>
+            <div class="form-group input-group">
                 <input type="text" class="form-control" id="search-movie"
                     placeholder="Enter Movie here! Ex: Wayne's World"/>
                 <div class="input-group-append">
@@ -37,13 +37,13 @@
             </div>
         </form>
         <!-- Search History -->
-        <div class="card" >
-            <ul class="list-group list-group-flush d-none" id="search-history" data-toggle="hide">
+        <div class="d-flex flex-column justify-content-center my-3" >
+            <ul class="list-group list-group-flush d-none col" id="search-history" data-toggle="hide">
                 <!-- <li class="list-group-item"></li> -->
             </ul>
-            <div class="row space-between">
-                <button id="clear-history-btn" class="btn btn-sm btn-secondary col-6">Clear History</button>
-                <button id="show-history-btn" class="btn btn-sm btn-secondary col-6">Show History</button>
+            <div class="d-flex flex justify-content-center row space-between">
+                <button id="clear-history-btn" class="btn btn-sm btn-secondary mx-1">Clear History</button>
+                <button id="show-history-btn" class="btn btn-sm btn-secondary mx-1">Show History</button>
             </div>
         </div>
     </div>

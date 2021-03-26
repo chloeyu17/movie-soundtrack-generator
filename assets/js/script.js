@@ -261,4 +261,3 @@ showHistoryBtn.on("click", function () {
     searchHistoryList.addClass("d-none");
    }
 });
-
