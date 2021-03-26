@@ -133,8 +133,8 @@ function omdbSearch(search) {
                     // Movie card elements
                     var movieWrapper = $('#movie-wrapper')
                     var movieCol = $("<div class='col-12 col-md-4 col-sm mb-3'>");
-                    var movieCard = $("<div id='movieCard' class='card text-dark' style='width: 18rem; background-color:#238C79'>");
-                    var movieCardTitle = $("<h5 class='card-title text-center'>")
+                    var movieCard = $("<div id='movieCard' class='card text-dark' style='width: 18rem; background-color:#60daff'>");
+                    var movieCardTitle = $("<h5 class='card-title text-center'> ")
                     var movieCardBody = $("<img class='card-img-bottom' style='width:100%'>");
 
                     //Creates eventlistener to select album based on movie 
