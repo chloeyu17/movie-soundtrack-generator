@@ -6,6 +6,7 @@
     --lightgreen: #23D962; 
 }
 
+
 .jumbo-head{
  border-radius:10px;
   background: url(../images/background_image_movie.png);
@@ -24,7 +25,7 @@ form h5 {
 
 .form-group {
     margin-left: 24em;
-}
+} */
 
 .mb-3 {
     color: whitesmoke;
