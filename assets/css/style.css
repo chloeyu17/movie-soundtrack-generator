@@ -6,13 +6,26 @@
     --lightgreen: #23D962; 
 }
 
+
+.jumbo-head{
+ border-radius:10px;
+  background: url(../images/background_image_movie.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 75% 75%;
+  color: white !important;
+  height: 340px;
+  margin:15px 30px 0px 30px;
+  }
+
 form h5 {
     margin-left: 20em;
 }
 
 .form-group {
     margin-left: 24em;
-}
+} */
 
 .mb-3 {
     color: whitesmoke;
