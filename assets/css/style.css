@@ -6,13 +6,27 @@
     --lightgreen: #23D962; 
 }
 
-form h5 {
-    margin-left: 20em;
+.jumbo-head {
+ border-radius:10px;
+  background: url(../images/background_image_movie.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 75% 75%;
+  color: white !important;
+  height: 340px;
+  margin:15px 30px 0px 30px;
+  box-shadow: 1px 1px 12px 3px black;
+}
+
+.display-2,
+.lead {
+    font-weight: 500;
 }
 
 .form-group {
-    margin-left: 24em;
-}
+    margin: 0 auto 0 auto;
+} */
 
 .mb-3 {
     color: whitesmoke;
@@ -32,6 +46,7 @@ form h5 {
     white-space: normal;
 }
 
+
 .col {
     border: 2px solid black;
     padding:0px;
@@ -45,7 +60,6 @@ form h5 {
 .card-wrap {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 71px;
 }
 
 .alert-dark {
@@ -57,20 +71,12 @@ form h5 {
     height: 26em;
 }
 
+.list-group-item {
+    margin: 5px auto 5px auto;
+    width: 39%;
+}
+
 .movie-cards {
     display: flex;
     flex-wrap: wrap;
-}
-
-@media only screen and (max-width: 440px) {
-    form h5 {
-        margin-left: 2.3em;
-    }
-    .form-group {
-        margin-left: 2em;
-        width: 88%;
-    }
-    .col-5 {
-        max-width: 88%;
-    }
 }
