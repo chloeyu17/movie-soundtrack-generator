@@ -68,6 +68,7 @@
 .card-wrap {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .alert-dark {
@@ -96,10 +97,12 @@
 .search-movie-card:hover {
     box-shadow: inset 0px 0px 500px var(--blue), 0 0 25px var(--blue);
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
 .m-card {
     margin-bottom: 5px;
+    width: 14rem;
 }
 
 .music-wrap {

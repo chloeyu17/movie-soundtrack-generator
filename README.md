@@ -2,7 +2,7 @@
 
 ## Description 
 
-An application that converts the user’s movie searches into the soundtrack allowing them to sample the songs. We accomplish this by using HTML, CSS, Bootstrap, Javascript (JQuery), and fetching data from IMDb and Apple Music web APIs.
+Our application takes a movie search from the user and returns a list of soundtracks that contain similar search terms.  After the user selects the desired soundtrack, they can sample the songs on apple music. We accomplish this by using HTML, CSS, Bootstrap, Javascript, and fetching data from IMDb and Apple Music web APIs.
 
 ### Project Overview
 
