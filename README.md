@@ -25,7 +25,7 @@ Our application takes a movie search from the user and returns a list of soundtr
 ![music search demo](assets/images/musicsearchdemo.gif)
 
 ### Application of Local Storage
-![history demo](assets/images/history:localstoragedemo.gif)
+![history demo](assets/images/localstoragedemo.gif)
 
 ## Links
 
