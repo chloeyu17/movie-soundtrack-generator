@@ -46,6 +46,8 @@ Our application takes a movie search from the user and returns a list of soundtr
 
 * Additionally, integrating multiple music APIs, such as Spotify or Youtube, would allow the user to select their preferred streaming service as well as catching the aforementioned edgecases. 
 
+* It could also be interesting to try loading the audio into the page using the HTML audio element instead of opening a new tab in the browser.
+
 * Ideally, we would allow users to create an account so that they can access past searches from their account on different devices. 
 
 * Finally, creating a backend framework and mobile application would allow for increased user accessibility and ease of use on different devices. 
