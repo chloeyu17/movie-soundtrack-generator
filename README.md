@@ -6,14 +6,14 @@ Our application takes a movie search from the user and returns a list of soundtr
 
 ### Project Overview
 
-* Displayed a personalized homepage with a searchbar and the developers' favorite soundtrack and movie using the APIs.
-* Created a friendly user interface that is interactive when adjusting to different screen sizes and mobile view using media queries. 
-* Styling was set in CSS and Bootstrap 
-* Using the OMDB API, we can pull movie titles and results searched from the user, including artwork. 
-* If there are multiple entries under the same title/series the movies are displayed for user selection. 
-* We then use a function that pulls the movie soundtrack from the Apple Music API.
-* Because Apple Music and OMDB use different character traits for the titles, we created a function that makes them lowercase.  
-* The user searches are stored in the local storage and to be accessed later from the user and selected again. 
+* The personalized homepage displays a searchbar and the developers' favorite soundtrack and movie using the APIs.
+* The page has a interactive user-friendly interface that adjusts to various screen sizes and mobile view using media queries. 
+* The page is styled with CSS and Bootstrap.
+* When the user searches for a movie, the site returns a list of possible soundtracks that contain similar keywords in the title.  These soundtracks are displayed for the user selection preference. 
+* The OMDB API pulls data about the movie inputted by the user and returns data including the movie's title, year of release, and poster. 
+* The title and year of release pulled from the OMDB API are compared with the soundtrack title and year from the Apple Music API.
+* Since Apple Music and OMDB have different standards for title capitalization, we created a function that sets both the movie and soundtrack title to all lowercase characters in order to catch edgecases.
+* User searches are stored in the local storage and displayed in a history section on the page.  Thus, the user can easily access and select past searches. 
 * The user also has the option to clear their storage history.  
 
 ## Usage  
@@ -42,14 +42,19 @@ Our application takes a movie search from the user and returns a list of soundtr
 
 ## Future Development 
 
-* Sync all movie albums that may have different title values with a different movie API. 
+* We would like to integrate another movie API in order to catch edgecases in which the movie title value doesn't match the soundtrack title value.
 
-* Integrate multiple music APIs for the user's preferred streaming services. 
+* Additionally, integrating multiple music APIs, such as Spotify or Youtube, would allow the user to select their preferred streaming service as well as catching the aforementioned edgecases. 
 
-* Users can access additional past searches from their accounts. 
+* Ideally, we would allow users to create an account so that they can access past searches from their account on different devices. 
 
-* Create a backend framework and mobile application for increased user accessibility to the platform. 
+* Finally, creating a backend framework and mobile application would allow for increased user accessibility and ease of use on different devices. 
 
+## Errors
+
+* There are certain edgecases for which the soundtrack's title on the iTunes API does not match the title on the OMDB API.  For instance, in cases where the sountrack is titled Main Theme (Soundtrack Title).
+
+* CORS Policy limits the number of times that users can select soundtracks.
 
 
 License
