@@ -19,13 +19,13 @@ Our application takes a movie search from the user and returns a list of soundtr
 ## Usage  
 
 ### Homepage  
-![Screenshot]()
+![home demo](assets/images/homedemo.gif)
 
 ### Application Selection 
-![Screenshot]()
+![music search demo](assets/images/musicsearchdemo.gif)
 
 ### Application of Local Storage
-![Screenshot]()
+![history demo](assets/images/history:localstoragedemo.gif)
 
 ## Links
 
