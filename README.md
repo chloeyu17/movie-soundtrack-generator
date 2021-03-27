@@ -6,7 +6,7 @@ Our application takes a movie search from the user and returns a list of soundtr
 
 ### Project Overview
 
-* Personalized homepage with searchbar and linked favorites soundtrack and movies using the apis.
+* Displayed a personalized homepage with a searchbar and the developers' favorite soundtrack and movie using the APIs.
 * Created a friendly user interface that is interactive when adjusting to different screen sizes and mobile view using media queries. 
 * Styling was set in CSS and Bootstrap 
 * Using the OMDB API, we can pull movie titles and results searched from the user, including artwork. 
