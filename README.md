@@ -6,11 +6,11 @@ Our application takes a movie search from the user and returns a list of soundtr
 
 ### Project Overview
 
-* Personalized homepage with searchbar and linked favorites soundtrack and movies using the apis.
+* Personalized homepage with searchbar and developers' linked favorite soundtrack and movie using the APIs'.
 * Created a friendly user interface that is interactive when adjusting to different screen sizes and mobile view using media queries. 
-* Styling was set in CSS and Bootstrap 
-* Using the OMDB API, we can pull movie titles and results searched from the user, including artwork. 
-* If there are multiple entries under the same title/series the movies are displayed for user selection. 
+* Set styling in CSS and Bootstrap.
+* Used the OMDB API to pull movie titles and results searched by the user, including artwork. 
+* User has the ability to search multiple entries under the same title/series and are displayed for the user selection preference. 
 * We then use a function that pulls the movie soundtrack from the Apple Music API.
 * Because Apple Music and OMDB use different character traits for the titles, we created a function that makes them lowercase.  
 * The user searches are stored in the local storage and to be accessed later from the user and selected again. 
