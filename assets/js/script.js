@@ -1,5 +1,4 @@
 var API_KEY_OMDB = "80c5dba2"
-var API_KEY_MUSIXMATCH = "b8a7a5f08ebc8726a80091d40c2a0c86"
 
 //Global scope of variables for easy access
 
