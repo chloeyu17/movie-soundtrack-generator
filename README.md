@@ -2,7 +2,11 @@
 
 ## Description 
 
+
+An application that converts the user’s movie searches into the soundtrack allowing them to sample the songs. We accomplish this by using HTML, CSS, Bootstrap, Javascript (JQuery), and fetching data from IMDb and Apple Music web APIs.
+
 Our application takes a movie search from the user and returns a list of soundtracks that contain similar search terms.  After the user selects the desired soundtrack, they can sample the songs on apple music. We accomplish this by using HTML, CSS, Bootstrap, Javascript, and fetching data from IMDb and Apple Music web APIs.
+
 
 ### Project Overview
 
@@ -34,9 +38,23 @@ Our application takes a movie search from the user and returns a list of soundtr
 
 ## API Documentation
 
-Apple Music API Documentation: https://developer.apple.com/documentation/applemusicapi
-OMDB API Documentation: https://readthedocs.org/projects/omdbpy/downloads/pdf/latest/
-OMDB API Usage :http://www.omdbapi.com/#usage
+* Itunes Search API: https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/
+
+* OMDB API Documentation: https://readthedocs.org/projects/omdbpy/downloads/pdf/latest/
+
+* OMDB API Usage :http://www.omdbapi.com/#usage
+
+## Future Development 
+
+* Sync all movie albums that may have different title values with a different movie API. 
+
+* Integrate multiple music APIs for the user's preferred streaming services. 
+
+* Users can access additional past searches from their accounts. 
+
+* Create a backend framework and mobile application for increased user accessibility to the platform. 
+
+
 
 License
 Copyright (c) [2021] [Chloe Yu, Gabe Thomas, Cliff Morin, Steven Paul]
